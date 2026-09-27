@@ -21,10 +21,10 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore Lab 3\SOFTEST_INTRO_Labs\SOFTEST_INTRO_Labs.sln
+        run: dotnet restore "Lab 3/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln"
 
       - name: Build solution
-        run: dotnet build Lab 3\SOFTEST_INTRO_Labs\SOFTEST_INTRO_Labs.sln --configuration Release --no-restore
+        run: dotnet build "Lab 3/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln" --configuration Release --no-restore
 
       - name: Run all tests
-        run: dotnet test Lab 3\SOFTEST_INTRO_Labs\SOFTEST_INTRO_Labs.sln --configuration Release --no-build --verbosity normal
+        run: dotnet test "Lab 3/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln" --configuration Release --no-build --verbosity normal
