@@ -21,16 +21,16 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore SOFTEST_INTRO_Labs.sln
+        run: dotnet restore "Lab 4/SOFTEST_INTRO_Labs.sln"
 
       - name: Build solution
         run: >
-          dotnet build SOFTEST_INTRO_Labs.sln
+          dotnet build "Lab 4/SOFTEST_INTRO_Labs.sln"
           --configuration Release --no-restore
 
       - name: Run tests that do not need a browser
         run: >
-          dotnet test SOFTEST_INTRO_Labs.sln
+          dotnet test "Lab 4/SOFTEST_INTRO_Labs.sln"
           --configuration Release --no-build
           --filter "TestCategory!=Browser"
           --verbosity normal
