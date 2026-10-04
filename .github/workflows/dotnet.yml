@@ -21,16 +21,16 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore "Lab 4/SOFTEST_INTRO_Labs.sln"
+        run: dotnet restore "Lab 4/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln"
 
       - name: Build solution
         run: >
-          dotnet build "Lab 4/SOFTEST_INTRO_Labs.sln"
+          dotnet build "Lab 4/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln"
           --configuration Release --no-restore
 
       - name: Run tests that do not need a browser
         run: >
-          dotnet test "Lab 4/SOFTEST_INTRO_Labs.sln"
+          dotnet test "Lab 4/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Labs.sln"
           --configuration Release --no-build
           --filter "TestCategory!=Browser"
           --verbosity normal
@@ -46,7 +46,7 @@ jobs:
 
         run: |
           dotnet run \
-            --project SOFTEST_INTRO_Calculator.Web \
+            --project "Lab 4/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Calculator.Web" \
             --configuration Release --no-build \
             --no-launch-profile \
             > calculator-web.log 2>&1 &
@@ -70,6 +70,6 @@ jobs:
           done
 
           dotnet test \
-            SOFTEST_INTRO_Calculator.WebUiTests \
+            "Lab 4/SOFTEST_INTRO_Labs/SOFTEST_INTRO_Calculator.WebUiTests" \
             --configuration Release --no-build \
             --verbosity normal
